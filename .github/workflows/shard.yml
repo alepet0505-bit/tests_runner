@@ -24,7 +24,7 @@ concurrency:
 
 jobs:
   shard:
-    uses: FlavioApric/tests_runner/.github/workflows/shard-core.yml@a90030e9553618fb0b0e640d4d603e0ccd87d9e8
+    uses: FlavioApric/tests_runner/.github/workflows/shard-core.yml@ba80cf2b31549dce7d0168389dea24789ac2c364
     with:
       run_id: ${{ inputs.run_id }}
       batch: ${{ inputs.batch }}
@@ -34,5 +34,5 @@ jobs:
       max_parallel: ${{ inputs.max_parallel }}
       recipient: ${{ inputs.recipient }}
       fleet_repo: FlavioApric/tests_runner
-      fleet_sha: a90030e9553618fb0b0e640d4d603e0ccd87d9e8
+      fleet_sha: ba80cf2b31549dce7d0168389dea24789ac2c364
     secrets: inherit
