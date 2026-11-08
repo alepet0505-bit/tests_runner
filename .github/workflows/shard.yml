@@ -14,6 +14,7 @@ on:
       units: { description: 'Comma separated unit ids', required: true, type: string }
       max_parallel: { description: 'Max parallel jobs', required: false, type: string, default: '20' }
       recipient: { description: 'PUBLIC key the results are sealed to (qafpub1:...)', required: true, type: string }
+      payload: { description: 'URL of the encrypted payload (empty = read the source repo with SOURCE_REPO_TOKEN)', required: false, type: string, default: '' }
 
 permissions:
   contents: read
@@ -24,7 +25,7 @@ concurrency:
 
 jobs:
   shard:
-    uses: FlavioApric/tests_runner/.github/workflows/shard-core.yml@dfbbd036afff85d56c55903b6e23e8f9322ac821
+    uses: FlavioApric/tests_runner/.github/workflows/shard-core.yml@b386ccab888b92a15c65eb8476c34a0b29865d41
     with:
       run_id: ${{ inputs.run_id }}
       batch: ${{ inputs.batch }}
@@ -33,6 +34,7 @@ jobs:
       units: ${{ inputs.units }}
       max_parallel: ${{ inputs.max_parallel }}
       recipient: ${{ inputs.recipient }}
+      payload: ${{ inputs.payload }}
       fleet_repo: FlavioApric/tests_runner
-      fleet_sha: dfbbd036afff85d56c55903b6e23e8f9322ac821
+      fleet_sha: b386ccab888b92a15c65eb8476c34a0b29865d41
     secrets: inherit
