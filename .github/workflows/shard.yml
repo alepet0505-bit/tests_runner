@@ -25,7 +25,7 @@ concurrency:
 
 jobs:
   shard:
-    uses: FlavioApric/tests_runner/.github/workflows/shard-core.yml@f1e769d6161eb359b5d3a4e803f0180b3c16c17f
+    uses: FlavioApric/tests_runner/.github/workflows/shard-core.yml@a254cb3877b231208899c03c166a38d34d1a9666
     with:
       run_id: ${{ inputs.run_id }}
       batch: ${{ inputs.batch }}
@@ -36,7 +36,7 @@ jobs:
       recipient: ${{ inputs.recipient }}
       payload: ${{ inputs.payload }}
       fleet_repo: FlavioApric/tests_runner
-      fleet_sha: f1e769d6161eb359b5d3a4e803f0180b3c16c17f
+      fleet_sha: a254cb3877b231208899c03c166a38d34d1a9666
     # explicit: `secrets: inherit` does not cross accounts, and the runner repos belong to other accounts than the home repo
     secrets:
       FLEET_PAYLOAD_KEY: ${{ secrets.FLEET_PAYLOAD_KEY }}
